@@ -1,6 +1,7 @@
 // Setup initial game stats
 var score = 0;
 var lives = 2;
+var powerPellets = 4;
 
 
 // Define your ghosts here
@@ -54,6 +55,7 @@ function clearScreen() {
 
 function displayStats() {
   console.log('Score: ' + score + '     Lives: ' + lives);
+  console.log('\n\nPower-pellets: ' + powerPellets);
 }
 
 function displayMenu() {
@@ -81,9 +83,10 @@ function eatDot() {
 
 function eatGhost(ghost) {
   if (ghost.edible === false) {
-    console.log(ghost.name + ' (the ' + ghost.colour ' one) ate Pac-Man. You lost a life!');
+    console.log('\n' + ghost.name + ' (the ' + ghost.colour + ' one) ate Pac-Man. You lost a life!');
+    lifeLost();
   } else {
-    console.lost('You ate ' + ghost.name + ' (the ' + ghost.colour ' one)!');
+    console.lost('\nYou ate ' + ghost.name + ' (the ' + ghost.colour + ' one)!');
     ghost.edible = false;
   }
 }
@@ -103,16 +106,16 @@ function processInput(key) {
       process.exit();
       break;
     case '1':
-      eatGhost(ghost[0]);
+      eatGhost(ghosts[0]);
       break;
     case '2':
-      eatGhost(ghost[1]);
+      eatGhost(ghosts[1]);
       break;
     case '3':
-      eatGhost(ghost[2]);
+      eatGhost(ghosts[2]);
       break;
     case '4':
-      eatGhost(ghost[3]);
+      eatGhost(ghosts[3]);
       break;
     case 'd':
       eatDot();
