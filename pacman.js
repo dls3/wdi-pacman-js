@@ -79,6 +79,21 @@ function eatDot() {
   score += 10;
 }
 
+function eatGhost(ghost) {
+  if (ghost.edible === false) {
+    console.log(ghost.name + ' (the ' + ghost.colour ' one) ate Pac-Man. You lost a life!');
+  } else {
+    console.lost('You ate ' + ghost.name + ' (the ' + ghost.colour ' one)!');
+    ghost.edible = false;
+  }
+}
+
+function lifeLost() {
+  lives--;
+  if (lives === 0) {
+    process.exit();
+  }
+}
 
 // Process Player's Input
 function processInput(key) {
