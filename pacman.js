@@ -28,13 +28,15 @@ var pinky = {
   edible: false
 };
 
-var Clyde = {
+var clyde = {
   menu_option: '4',
   name: 'Clyde',
   colour: 'Orange',
   character: 'Pokey',
   edible: false
 };
+
+var ghosts = [inky, blinky, pinky, clyde]
 
 // Draw the screen functionality
 function drawScreen() {
@@ -57,8 +59,13 @@ function displayStats() {
 function displayMenu() {
   console.log('\n\nSelect Option:\n');  // each \n creates a new line
   console.log('(d) Eat Dot');
+  console.log('(1) Eat Inky');
+  console.log('(2) Eat Blinky');
+  console.log('(3) Eat Pinky');
+  console.log('(4) Eat Clyde');
   console.log('(q) Quit');
 }
+
 
 function displayPrompt() {
   // process.stdout.write is similar to console.log except it doesn't add a new line after the text
@@ -80,6 +87,14 @@ function processInput(key) {
     case 'q':
       process.exit();
       break;
+    // case '1':
+    //   break;
+    // case '2':
+    //   break;
+    // case '3':
+    //   break;
+    // case '4':
+    //   break;
     case 'd':
       eatDot();
       break;
@@ -87,7 +102,6 @@ function processInput(key) {
       console.log('\nInvalid Command!');
   }
 }
-
 
 //
 // YOU PROBABLY DON'T WANT TO CHANGE CODE BELOW THIS LINE
