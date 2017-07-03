@@ -102,14 +102,18 @@ function processInput(key) {
     case 'q':
       process.exit();
       break;
-    // case '1':
-    //   break;
-    // case '2':
-    //   break;
-    // case '3':
-    //   break;
-    // case '4':
-    //   break;
+    case '1':
+      eatGhost(ghost[0]);
+      break;
+    case '2':
+      eatGhost(ghost[1]);
+      break;
+    case '3':
+      eatGhost(ghost[2]);
+      break;
+    case '4':
+      eatGhost(ghost[3]);
+      break;
     case 'd':
       eatDot();
       break;
