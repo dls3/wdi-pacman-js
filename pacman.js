@@ -62,10 +62,10 @@ function displayMenu() {
   console.log('\n\nSelect Option:\n');  // each \n creates a new line
   console.log('(d) Eat Dot');
   console.log('(p) Eat Power-Pellet');
-  console.log('(1) Eat Inky');
-  console.log('(2) Eat Blinky');
-  console.log('(3) Eat Pinky');
-  console.log('(4) Eat Clyde');
+  console.log('(1) Eat Inky' + isEdible(ghosts[0]));
+  console.log('(2) Eat Blinky' + isEdible(ghosts[1]));
+  console.log('(3) Eat Pinky' + isEdible(ghosts[2]));
+  console.log('(4) Eat Clyde' + isEdible(ghosts[3]));
   console.log('(q) Quit');
 }
 
@@ -93,6 +93,13 @@ function eatGhost(ghost) {
   }
 }
 
+function isEdible(ghost) {
+  if (ghost.edible === false) {
+    return ' (inedible)';
+  } else {
+    return ' (edible)';
+  }
+}
 
 function lifeLost() {
   lives--;
